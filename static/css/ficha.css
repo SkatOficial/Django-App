@@ -1,0 +1,38 @@
+.contenedor-vista{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+.lista-vista{
+    list-style: none;
+    padding: 0%;
+}
+.lista-vista h2{
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px 0px;
+}
+.item-lista-vista{
+    display: flex;
+    justify-content: space-between;
+
+    border-color: rgb(0, 0, 0);
+    border-width: 0 0 2px;
+    border-style: solid;
+
+    margin-bottom: 1rem;
+}
+.item-lista-vista p{
+    margin-bottom: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.imagen-vista{
+    border-radius: 2rem;
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    padding: 50px 0px;
+}

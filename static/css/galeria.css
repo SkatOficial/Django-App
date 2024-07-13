@@ -1,0 +1,183 @@
+@import url(./fonts.css);
+
+.galeria{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,300px));
+    gap: 30px;
+}
+
+/*---------CARTA--------*/
+.carta{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+
+    background-color: white;
+    border: 1px 1px 1px 1px black solid;
+    border-radius: 1rem;
+    
+    font-family: 'Open Sans';
+
+    overflow: hidden;
+
+    transition: 0.2s ease-in-out;
+}   
+    .carta:hover{
+        cursor: default;
+        transition: 0.2s ease-in-out;
+
+        transform: scale(1.1);
+        
+    }   
+    .carta img{
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        background-color: gray;
+    }
+
+.info-carta{
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+    .info-carta h2{
+        margin:0;
+
+        font-size: large;
+        font-weight: 700;
+    }
+    .info-carta p{
+        margin:0;
+
+        font-size: medium;
+        font-weight: 600;
+    }
+.contenedor-botones-carta{
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+}
+.boton-verMas{
+    position: relative;
+    
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+
+    border: none;
+
+    font-size: x-large;
+    color: orange;
+    background-color: transparent;
+}
+    .boton-verMas::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+
+        height: 2px;
+
+        background-color: orange;
+        transition: 0.5s ease;
+    }
+    .boton-verMas:hover::before{
+        width: 100%;
+    }
+    .boton-agregar{
+        
+        width: 20%;
+        position: relative;
+        
+        padding: 2%;
+        margin-bottom: 10px;
+
+        border: none;
+
+        font-size: x-large;
+        color: rgb(255, 255, 255);
+        background-color: rgb(180, 33, 33);
+
+        transition: 0.2s ease-in-out;
+        border-radius: 10px;
+    }
+    .boton-agregar:hover{
+        transition: 0.2s ease-in-out;
+        background-color: rgb(53, 198, 53);
+
+        transform: scale(1.1);
+    }
+    .boton-agregar a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+.boton-filtrar{
+    padding: 10px 20px;
+    background-color: rgb(0, 152, 0);
+    border-radius: 1rem;
+    color: white;
+    
+    justify-self: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+    .boton-filtrar:hover{
+        background-color: rgb(0, 195, 0);
+        transition: 1s;
+        padding: 10px 40px;
+
+
+
+    }
+/*---------CARTA GRANDE--------*/
+.cartaGrande{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+
+    background-color: rgba(206, 206, 206, 0.267);
+    border-radius: 1rem;
+
+    font-family: 'Open Sans';
+    font-size: 20px;
+
+    overflow: hidden;
+}   
+.cartaGrande img{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    background-color: gray;
+}
+
+
+/*---------FILTRO--------*/
+.filtro{
+    width: 80%;
+    height: auto;
+
+    margin: auto;
+    margin-top: 0;
+    padding:20px;
+
+    background-color: white;
+    border-radius: 2rem;
+
+    font-family: "Open sans";
+}
+    .filtro h1{
+        font-size: xx-large;
+        font-weight: 100;
+    }

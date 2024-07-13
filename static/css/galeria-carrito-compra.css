@@ -1,0 +1,84 @@
+.galeria-carrito-compra{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:5px;
+
+    height: 100%;
+
+    background: white;
+}
+
+.elemento-carrito-compra{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid rgb(30,30,30);
+}
+    .imagen-carrito-compra{
+        height: 100px;
+        max-height: 100px;
+        min-width: 150px;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+    .info-elemento-carrito{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+    }   
+        .info-elemento-carrito h2{
+            margin:0;
+            text-align: left;
+            font-size: large;
+            font-weight: 700;
+        }
+        .espesificaciones{
+            margin:0;
+
+            font-size: medium;
+            font-weight: 600;
+        }
+    .controlador-stock{
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    .btn-stock-flecha{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0;
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 1rem;
+        font-weight: bold;
+
+        background-color: rgb(30, 30, 30);
+        color: white;
+
+        border-radius: 10px;
+
+        transition: 0.1s ease;
+    }
+    .btn-stock-flecha:hover{
+        transition: 0.1s ease;
+        transform: scale(1.1);
+    }
+        .btn-stock-flecha p{
+            margin: auto;
+            text-align: center;
+            height: 100%;
+        }
+    .stock-cantidad{
+        font-size: large;
+
+        margin: 0;
+        margin-left:10px;
+        margin-right:10px;
+    }

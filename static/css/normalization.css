@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    
+}
+main{
+    padding-top: 90px;
+    padding-bottom: 340px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+h1{
+    text-align: center;
+}
+h2, h3, h4{
+    text-align: center;
+}
+button{
+    border: none;
+    background-color: transparent;
+}
+@media only screen and (max-width: 991px) {
+    main{
+        padding-bottom: 460px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    main{
+        padding-bottom: 800px;
+    }
+}
+
