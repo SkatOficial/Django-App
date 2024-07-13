@@ -10,7 +10,9 @@
                 <li class="nav-item seccion-nav">
                     <a class="formato-a" href="{% url 'home' %}">Home</a>
                     <a class="formato-a" href="{% url 'home' %}">Ver vehículos</a>
-                    <button class="boton-carrito-compra" id="btnCarritoCompra"></button>
+                    {% if user.is_authenticated %}
+                        <button class="boton-carrito-compra" id="btnCarritoCompra"></button>
+                    {% endif %}
                 </li>
                 <li class="nav-item seccion-nav">
                     <div class="buscador">
@@ -19,9 +21,12 @@
                     </div>
                 </li>
                 <li class="nav-item seccion-nav flex-row justify-content-start" id="lista-opciones-sesion">
-                    <a class="boton" href=""><button> Registrarse </button></a>
-                    <a class="boton" href=""><button> Iniciar sesion </button></a>
-                    <a class="boton" href=""><button type="submit">Cerrar sesion</button></a>
+                    {% if user.is_authenticated %}
+                        <a class="boton" href="{% url 'signout' %}"><button type="submit">Cerrar sesion</button></a>
+                    {% else %}
+                        <a class="boton" href="{% url 'registrer' %}"><button> Registrarse </button></a>
+                        <a class="boton" href="{% url 'signin' %}"><button> Iniciar sesion </button></a>
+                    {% endif %}
                 </li>
             </ul>
         </div>
