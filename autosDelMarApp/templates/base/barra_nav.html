@@ -1,0 +1,29 @@
+{% load static %}
+<nav class="navbar navbar-dark navbar-expand-lg nav">
+    <div class="container-fluid">
+        <a class="formato-a" href="{% url 'home' %}"><img class="w-50"src="{% static 'img/logo.png' %}" alt="img-logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavDropdown">
+            <ul class="navbar-nav d-flex justify-content-between">
+                <li class="nav-item seccion-nav">
+                    <a class="formato-a" href="{% url 'home' %}">Home</a>
+                    <a class="formato-a" href="{% url 'home' %}">Ver vehículos</a>
+                    <button class="boton-carrito-compra" id="btnCarritoCompra"></button>
+                </li>
+                <li class="nav-item seccion-nav">
+                    <div class="buscador">
+                        <button id="btnBuscar"> <img src="{% static 'img/buscar.png'%}" alt="img-buscar"> </button>
+                        <input id="inputBuscar" type="text"></input>
+                    </div>
+                </li>
+                <li class="nav-item seccion-nav flex-row justify-content-start" id="lista-opciones-sesion">
+                    <a class="boton" href=""><button> Registrarse </button></a>
+                    <a class="boton" href=""><button> Iniciar sesion </button></a>
+                    <a class="boton" href=""><button type="submit">Cerrar sesion</button></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

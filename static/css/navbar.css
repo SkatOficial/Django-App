@@ -2,9 +2,6 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.600);
 
-    display: flex;
-    justify-content: space-between;
-
     position: fixed;
 
     top: 0;
@@ -31,6 +28,8 @@
     .seccion-nav > .formato-a{
         color: white;
         text-decoration: none;
+
+        max-width: 1px;
         margin-left: 1rem;
         margin-right: 1rem;
 
