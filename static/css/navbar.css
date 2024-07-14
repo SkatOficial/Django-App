@@ -28,8 +28,7 @@
     .seccion-nav > .formato-a{
         color: white;
         text-decoration: none;
-
-        max-width: 1px;
+        min-width: 50px;
         margin-left: 1rem;
         margin-right: 1rem;
 
