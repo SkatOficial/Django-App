@@ -1,24 +1,13 @@
 @import url(./normalization.css);
 @import url(./navbar.css);
-@import url(./img-relative.css);
+@import url(./banner.css);
 @import url(./footer.css);
 @import url(./galeria.css);
 @import url(./login.css);
 @import url(./ficha.css);
 @import url(./galeria-carrito-compra.css);
+@import url(./link.css);
 
-/* body{
-    background-image: url("../img/fondo.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-    @media screen and (max-width: 1400px) {
-      body {
-        background-image: url("../img/fondo.png");
-        background-size: 450%;
-      }
-} */
 
 .fondo-gris{
     background-color: #dadada;

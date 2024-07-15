@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <a href="{% url 'verAutos'%}" class="link">&larr; Atras</a>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center mt-2 mb-5">
+                <img class="img-ficha"src="{{auto.img.url}}">
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center">
+                <ul class="lista-ficha">
+                    <li class="elemento-lista-ficha">
+                        <p>Marca </p>
+                        <p>{{auto.marca.nombre}}</p>
+                    </li>
+                    <li class="elemento-lista-ficha">
+                        <p>Modelo </p>
+                        <p>{{auto.modelo}}</p>
+                    </li>
+                    <li class="elemento-lista-ficha">
+                        <p>Año </p>
+                        <p>{{auto.año}}</p>
+                    </li>
+                    <li class="elemento-lista-ficha">
+                        <p>Transmision </p>
+                        <p>{{auto.transmision}}</p>
+                    </li>
+                    <li class="elemento-lista-ficha">
+                        <p>Motor </p>
+                        <p>{{auto.motor}}</p>
+                    </li>
+                    <li class="elemento-lista-ficha">
+                        <p>Velocidades </p>
+                        <p>{{auto.velocidades}}</p>
+                    </li>
+                    <li class="elemento-lista-ficha">
+                        <p>Precio </p>
+                        <p>${{auto.precio}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

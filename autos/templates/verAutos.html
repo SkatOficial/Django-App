@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="galeria" id="galeriaAutos">
+    {% for auto in autos %}
+        <div class="carta">
+            <img src="{{auto.img.url}}" class="card-img-top">
+            <div class="info-carta">
+                <h2>{{auto.modelo}}</h2>
+                <p>{{auto.marca}}</p>
+                <p>${{auto.precio}}</p>
+                <p>Stock: {{auto.stock}}</p>
+            </div>
+            <div class="contenedor-botones-carta">
+                <a href="{% url 'verAuto' id_auto=auto.id_auto%}">
+                    <button class="boton-verMas">Ver detalles</button>
+                </a>
+                {% if user.is_authenticated%}
+                    <div class="boton-agregar d-flex align-items-center px-2">
+                        <img src="{% static 'img/carrito_compra.png' %}" class="m-auto bg-transparent">
+                        <p class="m-auto"> Agregar</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

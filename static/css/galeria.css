@@ -28,7 +28,7 @@
         cursor: default;
         transition: 0.2s ease-in-out;
 
-        transform: scale(1.1);
+        transform: scale(1.01);
         
     }   
     .carta img{
@@ -93,32 +93,24 @@
     .boton-verMas:hover::before{
         width: 100%;
     }
-    .boton-agregar{
-        
-        width: 20%;
-        position: relative;
-        
-        padding: 2%;
+    .boton-agregar{   
+        max-width: 100px;   
+        height: 40px;
+        padding: 2px;
         margin-bottom: 10px;
 
-        border: none;
+        background-color: rgb(68, 68, 68);
+        color: white;
 
-        font-size: x-large;
-        color: rgb(255, 255, 255);
-        background-color: rgb(180, 33, 33);
+        border: none;
 
         transition: 0.2s ease-in-out;
         border-radius: 10px;
     }
     .boton-agregar:hover{
         transition: 0.2s ease-in-out;
-        background-color: rgb(53, 198, 53);
-
-        transform: scale(1.1);
-    }
-    .boton-agregar a{
-        text-decoration: none;
-        color: rgb(255, 255, 255);
+        cursor: pointer;
+        background-color: rgb(3, 3, 3);
     }
 .boton-filtrar{
     padding: 10px 20px;

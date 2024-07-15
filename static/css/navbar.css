@@ -21,7 +21,7 @@
         align-items: center;
     }
     .seccion-nav  img{
-        height: 50px;
+        height: 30px;
         margin-left: 10px;
     }
 
@@ -100,8 +100,8 @@
         height: 40px;
     }
     .boton-carrito-compra{
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         background-image: url('../img/carrito_compra.png');
         background-size: cover; 
         background-position: center;
@@ -113,9 +113,21 @@
         transition: 0.2s ease-out;
         transform: scale(1.1);
     }
-#btnCerrarSession{
-    display: none;
+
+.container-usuario{
+    padding: 5px;
+        
+    margin-right:10px;
+    margin-left: 10px;
+    color: white;
+
+    background-color: rgba(0, 0, 0, 0);
+    border-color: white;
 }
+.texto-usuario{
+    margin: auto;
+}
+
 @media only screen and (max-width: 991px) {
     .seccion-nav{
         flex-direction: column-reverse;
