@@ -1,0 +1,26 @@
+.carrito{
+    margin: 0 auto;
+    text-align: center;
+}
+    .carrito th,
+    .carrito td {
+        text-align: center;
+        vertical-align: middle;
+    }
+.img-carrito{
+    max-width: 100px;
+    border-radius: 1rem;
+}
+.boton-carrito{
+    display: inline-block;
+    width: 30px;
+    text-decoration: none;
+
+    margin: auto;
+    padding: auto;
+
+    background-color: gray;
+    color: white;
+
+    border-radius: 1rem;
+}

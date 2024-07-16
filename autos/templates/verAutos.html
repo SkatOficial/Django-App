@@ -13,14 +13,16 @@
                 <p>Stock: {{auto.stock}}</p>
             </div>
             <div class="contenedor-botones-carta">
-                <a href="{% url 'verAuto' id_auto=auto.id_auto%}">
+                <a href="{% url 'verAuto' id_auto=auto.id_auto %}">
                     <button class="boton-verMas">Ver detalles</button>
                 </a>
                 {% if user.is_authenticated%}
-                    <div class="boton-agregar d-flex align-items-center px-2">
-                        <img src="{% static 'img/carrito_compra.png' %}" class="m-auto bg-transparent">
-                        <p class="m-auto"> Agregar</p>
-                    </div>
+                    <a class="text-decoration-none" href="{% url 'agregar' id_auto=auto.id_auto %}">
+                        <div class="boton-agregar d-flex align-items-center px-2">
+                            <img src="{% static 'img/carrito_compra.png' %}" class="m-auto bg-transparent">
+                            <p class="m-auto"> Agregar</p>
+                        </div>
+                    </a>
                 {% endif %}
             </div>
         </div>

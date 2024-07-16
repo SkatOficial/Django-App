@@ -16,8 +16,9 @@ def verAuto(request,id_auto):
     }
     return render(request,'verAuto.html',context)
 
-def buscarAutos(request, palabra_buscada):
-    autos = Auto.objects.filter(Q(modelo__contains=palabra_buscada) | Q(marca__nombre__contains=palabra_buscada)).distinct()
+def buscarAutos(request):
+    palabra_buscada = request.GET.get('palabra_buscada', '')
+    autos = Auto.objects.filter(Q(modelo__contains=palabra_buscada) | Q(marca__nombre__contains=palabra_buscada)).distinct()# 'Q' sirve para crear consultas complejas, en este caso quiero combinar 2 consultas y eliminar duplicados (.distinct())
     context = {
         'autos': autos,
     }

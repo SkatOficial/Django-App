@@ -5,5 +5,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("autosDelMarApp.urls")),
     path('autenticacion/', include("autenticacion.urls")),
-    path('verVehículos/', include("autos.urls"))
+    path('verVehículos/', include("autos.urls")),
+    path('carrito/', include("carrito.urls")),
 ]

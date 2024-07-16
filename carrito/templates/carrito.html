@@ -1,0 +1,51 @@
+{% extends 'base/base.html'%}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6">
+            <table class="table carrito">
+                <thead>
+                    <tr>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if request.session.carro.items %}
+                        {% for key, value in request.session.carro.items %}
+                            <tr>
+                                <td><img src="{{value.imagen}}" class="img-carrito"></td>
+                                <td>{{value.marca}}</td>
+                                <td>{{value.modelo}}</td>
+                                <td>${{value.precio}}</td>
+                                <td ><a class="boton-carrito" href="{% url 'restar' id_auto=value.id_auto %}">-</a></td>
+                                <td>{{value.cantidad}}</td>
+                                <td><a class="boton-carrito" href="{% url 'agregar' id_auto=value.id_auto %}">+</a></td>
+                                <td>${{value.precioTotal}}</td>
+                            </tr>
+                        {% endfor %}
+                        {% else %}
+                        <tr>
+                            <td colspan="8">
+                                <div class="alert alert-danger text-center">
+                                    Sin productos
+                                </div>
+                            </td>
+                        </tr>
+                        {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

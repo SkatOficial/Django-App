@@ -12,14 +12,16 @@
                     <a class="formato-a" href="{% url 'verAutos' %}">Ver vehículos</a>
                 </li>
                 <li class="nav-item seccion-nav">
-                    <div class="buscador">
-                        <button id="btnBuscar"> <img src="{% static 'img/buscar.png'%}" alt="img-buscar"> </button>
-                        <input id="inputBuscar" type="text"></input>
-                    </div>
+                    <form action="{% url 'buscarAutos' %}" method="GET">
+                        <div class="buscador">
+                            <button id="btnBuscar"> <img src="{% static 'img/buscar.png'%}" alt="img-buscar"> </button>
+                            <input id="inputBuscar" type="text" name="palabra_buscada" placeholder="Buscar..." ></input>
+                        </div>
+                    </form>
                 </li>
                 <li class="nav-item seccion-nav flex-row justify-content-start" id="lista-opciones-sesion">
                     {% if user.is_authenticated %}
-                        <a href="">
+                        <a href="{% url 'carrito'%}">
                             <button class="boton-carrito-compra" id="btnCarritoCompra"></button>
                         </a>
                         <div class="container-usuario d-flex aling-items-center"> 

@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'autos',
     'autenticacion',
     'autosDelMarApp',
+    'carrito',
 ]
 
 MIDDLEWARE = [
