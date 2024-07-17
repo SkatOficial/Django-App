@@ -29,7 +29,7 @@ def registrer(request):
     context = {'form': UserCreationForm}
     return render(request, 'register.html', context)
 
-@login_required
+@login_required(login_url='signin')
 def signout(request):
     logout(request)
     return redirect('home')

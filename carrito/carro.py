@@ -46,3 +46,9 @@ class Carro:
                    self.eliminar(auto) 
                 break
         self.guardar_carro()
+
+    def total_pago(self):
+        total_a_pagar = 0
+        for clave in self.carro:
+            total_a_pagar += self.carro[clave]["precioTotal"]
+        return total_a_pagar

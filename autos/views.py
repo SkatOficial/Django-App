@@ -1,13 +1,18 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Auto
+from .galeriaAutos import GaleriaAutos
 from django.db.models import Q
 # Create your views here.
 def verAutos(request):
     autos = Auto.objects.all() 
-    context = {
-        'autos': autos,
-    }
-    return render(request,'verAutos.html',context)
+
+    galeria = GaleriaAutos(request)
+
+    if galeria.esta_vacia():
+        for auto in autos:
+            galeria.agregar(auto=auto)
+
+    return render(request,'verAutos.html')
 
 def verAuto(request,id_auto):
     auto = get_object_or_404(Auto, id_auto=id_auto)
