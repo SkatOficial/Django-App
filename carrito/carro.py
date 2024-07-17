@@ -1,6 +1,5 @@
 class Carro:        
     def __init__(self,request):
-        #del request.session['carro']
         self.request=request
         self.session=request.session
         self.carro = self.session.get('carro')
@@ -31,7 +30,7 @@ class Carro:
         self.session["carro"]=self.carro
         self.session.modified=True
     
-    def eliminar(self,auto):
+    def eliminar_auto(self,auto):
         #primer ver si existe para poder eliminar
         if str(auto.id_auto) in self.carro:
             del self.carro[str(auto.id_auto)]
@@ -43,7 +42,7 @@ class Carro:
                 value["cantidad"]=value["cantidad"]-1
                 value["precioTotal"]=value["precioTotal"]-auto.precio
                 if value["cantidad"]<1:
-                   self.eliminar(auto) 
+                   self.eliminar_auto(auto) 
                 break
         self.guardar_carro()
 
@@ -52,3 +51,7 @@ class Carro:
         for clave in self.carro:
             total_a_pagar += self.carro[clave]["precioTotal"]
         return total_a_pagar
+    
+    def eliminar(self):
+        del self.request.session['carro']
+        self.session.modified = True

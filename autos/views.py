@@ -4,11 +4,10 @@ from .galeriaAutos import GaleriaAutos
 from django.db.models import Q
 # Create your views here.
 def verAutos(request):
-    autos = Auto.objects.all() 
-
     galeria = GaleriaAutos(request)
 
-    if galeria.esta_vacia():
+    if galeria.esta_vacia():#En caso de que "galeria" este vacia saca los datos de LA BDD
+        autos = Auto.objects.all() 
         for auto in autos:
             galeria.agregar(auto=auto)
 

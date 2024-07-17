@@ -1,6 +1,5 @@
 class GaleriaAutos:        
     def __init__(self,request):
-        #del request.session['galeriaAutos']
         self.request=request
         self.session=request.session
         self.galeria = self.session.get('galeriaAutos')
@@ -50,3 +49,7 @@ class GaleriaAutos:
                 if(value["stock"]>0):
                     return True   
                 return False
+            
+    def eliminar(self):
+        del self.request.session['galeriaAutos']
+        self.session.modified = True

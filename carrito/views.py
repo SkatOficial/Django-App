@@ -36,3 +36,19 @@ def restar_producto(request, id_auto):
     
     return redirect(request.META.get('HTTP_REFERER'))
 
+@login_required(login_url='signin')
+def pagar(request):
+
+    carro=Carro(request)
+    galeria = GaleriaAutos(request)
+    
+    for clave,value in carro.carro.items():
+        auto = Auto.objects.get(id_auto=clave)
+        auto.stock = auto.stock - value["cantidad"]
+        auto.save()
+
+    carro.eliminar()
+    galeria.eliminar()
+    
+    
+    return redirect(request.META.get('HTTP_REFERER'))

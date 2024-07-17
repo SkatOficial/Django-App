@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-lg-6">
+        <div class="col-sm-12 col-md-12 col-lg-6 my-3">
             <table class="table carrito">
                 <thead>
                     <tr>
@@ -45,7 +45,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-12 col-lg-3 my-auto ms-5">
+        <div class="col-sm-12 col-md-12 col-lg-3 my-3">
             <table class="table carrito">
                 <thead>
                     <tr >
@@ -58,7 +58,7 @@
                         <td>${{total_pagar}}</td>
                     </tr>
                     <tr>
-                        <td>PAGAR</td>
+                        <td><a class="boton-pagar" href="{% url 'pagar' %}">PAGAR</a></td>
                     </tr>
                     {% else %}
                     <tr>
