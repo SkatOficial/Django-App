@@ -5,7 +5,7 @@ class GaleriaAutos:
         self.galeria = self.session.get('galeriaAutos')
         if not self.galeria:
             self.galeria = self.session['galeriaAutos'] = {}
-            
+        
     def agregar(self,auto):
         if(str(auto.id_auto) not in self.galeria.keys()):
             self.galeria[auto.id_auto]={
@@ -53,3 +53,17 @@ class GaleriaAutos:
     def eliminar(self):
         del self.request.session['galeriaAutos']
         self.session.modified = True
+
+    def getAutos(self):  
+        galeria_aux = []
+        for key, value in self.galeria.items():
+            galeria_aux.append(value)
+        return galeria_aux;   
+
+    def getFiltroAutos(self, palabra):
+        palabra = palabra.upper()
+        galeria_aux = []
+        for key, value in self.galeria.items():
+            if(palabra in value["marca"].upper() or palabra in value["modelo"].upper()):
+                galeria_aux.append(value)
+        return galeria_aux;
