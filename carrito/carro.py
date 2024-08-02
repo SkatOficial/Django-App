@@ -26,7 +26,6 @@ class Carro:
         self.guardar_carro()
 
     def guardar_carro(self):
-        print(self.carro)
         self.session["carro"]=self.carro
         self.session.modified=True
     
@@ -36,7 +35,7 @@ class Carro:
             del self.carro[str(auto.id_auto)]
             self.guardar_carro()
   
-    def restar_auto(self,auto):
+    def restarAuto(self,auto):
         for key, value in self.carro.items():
             if key==str(auto.id_auto):
                 value["cantidad"]=value["cantidad"]-1
@@ -46,7 +45,7 @@ class Carro:
                 break
         self.guardar_carro()
 
-    def total_pago(self):
+    def totalPago(self):
         total_a_pagar = 0
         for clave in self.carro:
             total_a_pagar += self.carro[clave]["precioTotal"]
@@ -55,3 +54,15 @@ class Carro:
     def eliminar(self):
         del self.request.session['carro']
         self.session.modified = True
+
+    def getCantidad(self, auto):
+        for key, value in self.carro.items():
+            if key==str(auto.id_auto):
+                return value["cantidad"]
+        return 0
+
+    def getPrecioTotal(self, auto):
+        for key, value in self.carro.items():
+            if key==str(auto.id_auto):
+                return value["precioTotal"]
+        return 0

@@ -5,7 +5,7 @@ from .galeriaAutos import GaleriaAutos
 def verAutos(request):
     galeria = GaleriaAutos(request)
 
-    if galeria.esta_vacia():#En caso de que "galeria" este vacia saca los datos de LA BDD
+    if galeria.estaVacia():#En caso de que "galeria" este vacia saca los datos de LA BDD
         autos = Auto.objects.all() 
         for auto in autos:
             galeria.agregar(auto=auto)

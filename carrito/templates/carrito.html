@@ -19,18 +19,18 @@
                         <th scope="col">TOTAL</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="tabla-body-carrito">
                     {% if request.session.carro.items %}
                         {% for key, value in request.session.carro.items %}
-                            <tr>
+                            <tr class="fila-producto">
                                 <td><img src="{{value.imagen}}" class="img-carrito"></td>
                                 <td>{{value.marca}}</td>
                                 <td>{{value.modelo}}</td>
                                 <td>${{value.precio}}</td>
-                                <td ><a class="boton-carrito" href="{% url 'restar' id_auto=value.id_auto %}">-</a></td>
-                                <td>{{value.cantidad}}</td>
-                                <td><a class="boton-carrito" href="{% url 'agregar' id_auto=value.id_auto %}">+</a></td>
-                                <td>${{value.precioTotal}}</td>
+                                <td ><button class="boton-carrito" href="{% url 'restar' id_auto=value.id_auto %}" data-id="{{ value.id_auto }}" data-accion="restar">-</button></td>
+                                <td class="cantidad-carrito">{{value.cantidad}}</td>
+                                <td><button class="boton-carrito" data-id="{{ value.id_auto }}" data-accion="sumar">+</button></td>
+                                <td class="valor-total">${{value.precioTotal}}</td>
                             </tr>
                         {% endfor %}
                         {% else %}
@@ -52,10 +52,10 @@
                         <th scope="col">TOTAL A PAGAR</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="tabla-body-precio-final">
                     {% if request.session.carro.items %}
                     <tr>
-                        <td>${{total_pagar}}</td>
+                        <td class="precio-final">${{total_pagar}}</td>
                     </tr>
                     <tr>
                         <td><a class="boton-pagar" href="{% url 'pagar' %}">PAGAR</a></td>

@@ -8,7 +8,7 @@
 }
 
 /*---------CARTA--------*/
-.carta{
+.carta-galeria{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -24,14 +24,14 @@
 
     transition: 0.2s ease-in-out;
 }   
-    .carta:hover{
+    .carta-galeria:hover{
         cursor: default;
         transition: 0.2s ease-in-out;
 
         transform: scale(1.01);
         
     }   
-    .carta img{
+    .carta-galeria img{
         width: 100%;
         height: 50%;
         object-fit: cover;

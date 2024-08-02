@@ -20,30 +20,30 @@ class GaleriaAutos:
                 "precio": auto.precio,
                 "stock": auto.stock,
             }
-        self.guardar_galeria()
+        self.guardarGaleria()
 
-    def guardar_galeria(self):
+    def guardarGaleria(self):
         self.session["galeriaAutos"]=self.galeria
         self.session.modified=True
     
-    def restar_stock(self,auto):
+    def restarStock(self,auto):
         for key, value in self.galeria.items():
             if key==str(auto.id_auto):
                 value["stock"]=value["stock"]-1
                 break
-        self.guardar_galeria()
+        self.guardarGaleria()
     
-    def sumar_stock(self,auto):
+    def sumarStock(self,auto):
         for key, value in self.galeria.items():
             if key==str(auto.id_auto):
                 value["stock"]=value["stock"]+1
                 break
-        self.guardar_galeria()
+        self.guardarGaleria()
 
-    def esta_vacia(self):
+    def estaVacia(self):
         return not bool(self.galeria)
     
-    def tiene_stock(self,auto):
+    def tieneStock(self,auto):
         for key, value in self.galeria.items():
             if key==str(auto.id_auto):
                 if(value["stock"]>0):
@@ -67,3 +67,9 @@ class GaleriaAutos:
             if(palabra in value["marca"].upper() or palabra in value["modelo"].upper()):
                 galeria_aux.append(value)
         return galeria_aux;
+
+    def getStockAuto(self, auto):
+        for key, value in self.galeria.items():
+            if key == str(auto.id_auto):
+                return value["stock"]
+        return False
